@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Alternative to Bootstrap 3 Glyphicons -->
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     {% block common_scripts %}{% endblock %} 
+    {# Custom CSS#}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
+
+    {# Fonts#}
+     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    
+  </head>
+
+  <body>
+   <header class="site-header clearfix">
+    <nav>
+      <div class="logo">
+      <p class="h1">FINSENTIAL</p> 
+    
+      </div>
+      <div class="menu">
+      <ul>
+      <li class="nav-item"><a href="{% url 'index.html' %}" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="{% url 'contact.html' %}" class="nav-link">Contact</a></li>
+      <li class="nav-item"><a href="{% url 'user.html' %}" class="nav-link">User sign up</a></li>
+      <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link">Log in</a></li>
+      <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link">Sign up</a></li>
+  
+      </ul>
+      </div>
+    </nav>
+    {% comment %} {% include 'nav.html' %} {% endcomment %}
+
+    {# The actual blog content #}    
+    {% block content %}
+    {% endblock %}
+
+    </header>
+    
+    {# SCRIPTS#}
+    {% comment %} <script type="text/javascript" src="{% static 'js/blog.js' %}"></script> {% endcomment %}
+    
+  </body>
+</html>

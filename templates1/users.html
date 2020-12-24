@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Users{% endblock %} 
+
+{% block content %}
+  <div class="col-sm-4 col-md-4 col-lg-4 mx-auto">
+    <div class="card card-signin my-5">
+      <div class="card-body">
+        <h5 class="card-title text-center">Please sign up here!</h5>
+ 
+    <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="form-group">
+          <input type="text"  name="first_name" 
+          class="form-control text-muted" placeholder="First Name">
+          </div>
+          <div class="form-group">
+          <input type="text"  name="last_name" 
+          class="form-control text-muted" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+          <input type="email" name="email"
+          class="form-control"  aria-describedby="emailHelp" placeholder="Email address">
+          <small id="emailHelp" class="form-text text-muted">
+          We'll never share your email with anyone else.
+          </small>
+          </div>
+          <center>
+          <button type="submit" class="btn btn-primary col-3">Sign In</button>
+          </center>
+          </form>
+    
+   </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Sign Up" %}{% endblock %}
+
+{% block content %}
+
+<div class="col-sm-3 col-md-3 col-lg-3 mx-auto">
+  <div class="card card-signin my-5">
+    <div class="card-body"> 
+    <center>
+    <h4 class="card-title ">Sign Up Form</h4>
+      <form method="POST">
+      {% csrf_token %}
+       {% include 'includes/form.html' %}
+  <button class="btn btn-success" type="submit">{% trans "Sign Up" %}</button>
+</form>
+<p>{% blocktrans %}Already a user? <a href="{{ login_url }}">Log in</a>.{% endblocktrans %}</p>
+</center>
+    </div>
+  </div>
+</div> 
+
+{% endblock %}
